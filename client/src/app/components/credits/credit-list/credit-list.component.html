@@ -1,0 +1,41 @@
+<div class="filter">
+  <label for="filter">Filter in descending by</label>
+  <select (change)="onChange($event.target.value)" name="filter" id="filter">
+    <option value="date">Creation Date</option>
+    <option value="amount">Amount</option>
+    <option value="duration">Duration</option>
+  </select>
+</div>
+
+<div class="results">
+  <p>Results {{result.first}} - {{result.last}} of {{result.max}}</p>
+</div>
+
+<table class="centered">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Amount</th>
+      <th>Creation Date</th>
+      <th>Repayment Period</th>
+      <th>Duration (In months)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="{{credit?.status}}" *ngFor="let credit of credits" routerLink="/credit/{{credit?.id}}">
+      <td>{{credit?.status}}</td>
+      <td>{{credit?.amount}} BGN</td>
+      <td>{{credit?.creationDate | date: 'shortDate'}}</td>
+      <td>{{credit?.repaymentPeriod | date: 'shortDate'}}</td>
+      <td>{{credit?.duration}}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="pagination">
+  <a [class.disabled]="!pages.hasPrevPage" routerLink="/credits" [queryParams]="{page: pages.prevPage}" href="#">&laquo;</a>
+  <a *ngFor="let page of pages.maxPages" [class.active]="activePage === page" routerLink="/credits" [queryParams]="{page: page}">{{page}}</a>
+  <a [class.disabled]="!pages.hasNextPage" routerLink="/credits" [queryParams]="{page: pages.nextPage}" href="#">&raquo;</a>
+</div>

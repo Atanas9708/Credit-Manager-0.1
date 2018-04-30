@@ -1,0 +1,96 @@
+<div class="wrapper">
+  <div class="borrowerInfo">
+    <table class="borrower">
+      <h5>Borrower Information</h5>
+      <tbody>
+        <tr>
+          <th>First Name:</th>
+          <td>{{credit?.borrower.firstName}}</td>
+        </tr>
+        <tr>
+          <th>Last Name:</th>
+          <td>{{credit?.borrower.lastName}}</td>
+        </tr>
+        <tr>
+          <th>PIN:</th>
+          <td>{{credit?.borrower.PIN}}</td>
+        </tr>
+        <tr>
+          <th>Phone:</th>
+          <td>{{credit?.borrower.phone}}</td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>{{credit?.borrower.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="history">
+      <thead>
+        <tr>
+          <th>History</th>
+        </tr>
+      </thead>
+
+      <tr>
+        <td>{{credit?.borrower.history}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="creditInfo">
+    <table class="credit">
+      <h5 >Credit Information</h5>
+      <tbody>
+        <tr>
+          <th>Amount:</th>
+          <td>{{credit?.amount}} BGN</td>
+        </tr>
+        <tr>
+          <th>Duration (In months):</th>
+          <td>{{credit?.duration}}</td>
+        </tr>
+        <tr>
+          <th>Repayment Period:</th>
+          <td>{{credit?.repaymentPeriod | date: 'shortDate'}}</td>
+        </tr>
+        <tr>
+          <th>First Maturity Date:</th>
+          <td>{{credit?.firstMaturityDate | date: 'shortDate'}}</td>
+        </tr>
+        <tr>
+          <th>Interest Rate:</th>
+          <td>{{credit?.interestRate}}%</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+    <div class="status">
+      <label>Status</label>
+      <select (change)="onChange($event.target.value)" class="form-control" name="status" id="status">
+        <option disabled value="{{credit?.status}}">{{credit?.status}}</option>
+        <option *ngIf="credit?.status !== 'Rejected' && credit?.status !== 'Delivered'" value="Delivered">Delivered</option>
+        <option *ngIf="credit?.status !== 'Rejected' && credit?.status !== 'Delivered'" value="Rejected">Rejected</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="notes">
+    <ul class="collection">
+        <li class="collection-header"><h5>Notes</h5></li>
+        <li class="collection-item" *ngFor="let note of notes">
+          <p>{{note.content}} <br>
+            <span class="date">{{note.createdOn}} ago</span>
+          </p>
+        </li>
+      </ul>
+
+    <form (ngSubmit)="addNote()">
+      <input placeholder="Note" [(ngModel)]="note" name="note" id="note" type="text">
+
+      <input class="btn" type="submit" value="Add Note">
+    </form>
+  </div>
+</div>

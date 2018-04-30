@@ -1,0 +1,101 @@
+.wrapper {
+  display: flex;
+}
+
+.wrapper h5 {
+  font-weight: bold;
+}
+
+.borrower, .credit {
+  width: 300px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+.borrower, .history {
+  margin-left: 50px;
+}
+
+.borrower > h5 {
+  text-align: center;
+  position: relative;
+  left: 60px;
+}
+
+/* .borrower > h4 {
+  width: 400px;
+} */
+
+tr {
+  border: 1px solid black;
+}
+
+/* th {
+  border: 2px solid black;
+} */
+
+/* td, th {
+  text-align: center;
+} */
+
+.history {
+  width: 300px;
+}
+
+.history th {
+  text-align: center;
+}
+
+.history td {
+  text-align: center;
+}
+
+.creditInfo {
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+.credit > h5 {
+  position: relative;
+  left: 40px;
+}
+
+.borrowerInfo {
+  margin-left: 30px;
+}
+
+.notes {
+  margin-left: 100px;
+  margin-top: 90px;
+  margin-right: 20px;
+}
+
+.status {
+  margin-top: 20px;
+}
+
+select{
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.date {
+  /* margin-top: 20px; */
+  font-weight: bold;
+  float: right;
+}
+
+.collection-header {
+  padding-left: 20px;
+}
+
+/* .collection {
+  width: 440px;
+} */
+
+/* .row {
+  width: 230px;
+  text-align: center;
+} */

@@ -1,0 +1,20 @@
+.navbar-material nav{
+  background-color: #000000;
+}
+
+.nav-container{
+  background-color: #000000;
+}
+
+.material-icons {
+  vertical-align: middle !important;
+  
+}
+
+input:focus::-webkit-input-placeholder {
+  color:transparent;
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.3 !important;
+}

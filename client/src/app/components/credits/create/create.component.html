@@ -1,0 +1,67 @@
+<div class="content">
+  <form class="form center-form" (ngSubmit)="createCredit()">
+    <div class="borrower">
+      <h4>Borrower Info</h4>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input [(ngModel)]="firstName" id="firstName" name="firstName" type="text" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input [(ngModel)]="lastName" id="lastName" name="lastName" type="text" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="PIN">PIN</label>
+        <input [(ngModel)]="PIN" id="PIN" name="PIN" type="number" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input [(ngModel)]="phone" id="phone" name="phone" type="text" class="form-control" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input [(ngModel)]="email" id="email" name="email" type="text" class="form-control" required/>
+      </div>
+
+      <label for="history">History</label>
+      <textarea [(ngModel)]="history" name="history" id="history"></textarea>
+    </div>
+
+    <div class="credit">
+      <h4>Credit Info</h4>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input [(ngModel)]="amount" id="amount" name="amount" type="number" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="repaymentPeriod">Repayment Period</label>
+        <input [(ngModel)]="repaymentPeriod" id="repaymentPeriod" name="repaymentPeriod" type="date" class="form-control" required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="firstMaturityDate">First Maturity Date</label>
+        <input [(ngModel)]="firstMaturityDate" id="firstMaturityDate" name="firstMaturityDate" type="date" class="form-control" required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="interestRate">Interest Rate</label>
+        <input [(ngModel)]="interestRate" id="interestRate" name="interestRate" type="number" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="duration">Duration (In months)</label>
+        <input [(ngModel)]="duration" id="duration" name="duration" type="number" class="form-control" required />
+      </div>
+
+      <input type="submit" value="Create" class="form-btn btn" />
+
+    </div>
+
+  </form>
+</div>

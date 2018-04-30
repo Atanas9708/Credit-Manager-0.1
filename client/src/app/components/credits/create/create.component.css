@@ -1,0 +1,57 @@
+.content {
+  margin: auto;
+  padding: 20px;
+  max-width: 900px;
+  height: 700px;
+}
+
+/* .form>* {
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+} */
+
+.form {
+  text-align: center;
+  width: 900px;
+  display: flex;
+  justify-content: center;
+}
+
+/* .form>input[type="submit"] {
+  border: 0;
+  margin: auto;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  background: #6592bf;
+  color: #ffffff;
+} */
+
+.form>input[type="submit"]:hover {
+  background: #83bef7;
+  cursor: pointer;
+}
+
+.borrower {
+  width: 300px;
+}
+
+.credit {
+  width: 300px;
+  margin-left: 100px;
+}
+
+h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+textarea {
+  height: 150px;
+  resize: none;
+}
+
+input[type="submit"] {
+  margin-top: 50px;
+}
