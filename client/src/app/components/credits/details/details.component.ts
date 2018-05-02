@@ -49,6 +49,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
           });
           this.notes = res['notes'];
           document.getElementById('note')['value'] = '';
+          this.note = '';
         }
       })
     } else {
